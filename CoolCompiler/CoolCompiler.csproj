@@ -49,17 +49,33 @@
     <Compile Include="ANTLR\CoolLexer.cs" />
     <Compile Include="ANTLR\CoolParser.cs" />
     <Compile Include="ANTLR\CoolVisitor.cs" />
+    <Compile Include="AST\ASTNode.cs" />
+    <Compile Include="AST\Auxiliary\AuxiliaryNode.cs" />
+    <Compile Include="AST\Auxiliary\FormalNode.cs" />
+    <Compile Include="AST\Auxiliary\IdNode.cs" />
+    <Compile Include="AST\Auxiliary\TypeNode.cs" />
+    <Compile Include="AST\ClassNode.cs" />
+    <Compile Include="AST\Expression\AssignmentNode.cs" />
+    <Compile Include="AST\Expression\ExpressionNode.cs" />
+    <Compile Include="AST\Expression\Operators\Unary\IsVoidNode.cs" />
+    <Compile Include="AST\Expression\Operators\Unary\NotNode.cs" />
+    <Compile Include="AST\Expression\Operators\Unary\UnaryOperationNode.cs" />
+    <Compile Include="AST\Feature\AttributeNode.cs" />
+    <Compile Include="AST\Feature\FeatureNode.cs" />
+    <Compile Include="AST\Feature\MethodNode.cs" />
+    <Compile Include="AST\ProgramNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SemanticCheck\Info\TypeInfo.cs" />
+    <Compile Include="SemanticCheck\Visit\IVisit.cs" />
+    <Compile Include="SemanticCheck\Visit\IVisitor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ANTLR\Cool.g4" />
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AST\" />
     <Folder Include="CodeGenerations\" />
-    <Folder Include="SemanticCheck\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
