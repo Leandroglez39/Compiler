@@ -32,7 +32,7 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.7.1")]
 [System.CLSCompliant(false)]
-public partial class COOLParser : Parser {
+public partial class CoolParser : Parser {
 	protected static DFA[] decisionToDFA;
 	protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
 	public const int
@@ -81,16 +81,16 @@ public partial class COOLParser : Parser {
 
 	public override string SerializedAtn { get { return new string(_serializedATN); } }
 
-	static COOLParser() {
+	static CoolParser() {
 		decisionToDFA = new DFA[_ATN.NumberOfDecisions];
 		for (int i = 0; i < _ATN.NumberOfDecisions; i++) {
 			decisionToDFA[i] = new DFA(_ATN.GetDecisionState(i), i);
 		}
 	}
 
-		public COOLParser(ITokenStream input) : this(input, Console.Out, Console.Error) { }
+		public CoolParser(ITokenStream input) : this(input, Console.Out, Console.Error) { }
 
-		public COOLParser(ITokenStream input, TextWriter output, TextWriter errorOutput)
+		public CoolParser(ITokenStream input, TextWriter output, TextWriter errorOutput)
 		: base(input, output, errorOutput)
 	{
 		Interpreter = new ParserATNSimulator(this, _ATN, decisionToDFA, sharedContextCache);
@@ -105,7 +105,7 @@ public partial class COOLParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_program; } }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitProgram(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -153,16 +153,16 @@ public partial class COOLParser : Parser {
 		}
 		public ClassesContext(ProgramBlocksContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitClasses(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class EofContext : ProgramBlocksContext {
-		public ITerminalNode Eof() { return GetToken(COOLParser.Eof, 0); }
+		public ITerminalNode Eof() { return GetToken(CoolParser.Eof, 0); }
 		public EofContext(ProgramBlocksContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitEof(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -208,12 +208,12 @@ public partial class COOLParser : Parser {
 	}
 
 	public partial class ClassDefineContext : ParserRuleContext {
-		public ITerminalNode CLASS() { return GetToken(COOLParser.CLASS, 0); }
-		public ITerminalNode[] TYPEID() { return GetTokens(COOLParser.TYPEID); }
+		public ITerminalNode CLASS() { return GetToken(CoolParser.CLASS, 0); }
+		public ITerminalNode[] TYPEID() { return GetTokens(CoolParser.TYPEID); }
 		public ITerminalNode TYPEID(int i) {
-			return GetToken(COOLParser.TYPEID, i);
+			return GetToken(CoolParser.TYPEID, i);
 		}
-		public ITerminalNode INHERITS() { return GetToken(COOLParser.INHERITS, 0); }
+		public ITerminalNode INHERITS() { return GetToken(CoolParser.INHERITS, 0); }
 		public FeatureContext[] feature() {
 			return GetRuleContexts<FeatureContext>();
 		}
@@ -226,7 +226,7 @@ public partial class COOLParser : Parser {
 		}
 		public override int RuleIndex { get { return RULE_classDefine; } }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitClassDefine(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -294,8 +294,8 @@ public partial class COOLParser : Parser {
 		}
 	}
 	public partial class MethodContext : FeatureContext {
-		public ITerminalNode OBJECTID() { return GetToken(COOLParser.OBJECTID, 0); }
-		public ITerminalNode TYPEID() { return GetToken(COOLParser.TYPEID, 0); }
+		public ITerminalNode OBJECTID() { return GetToken(CoolParser.OBJECTID, 0); }
+		public ITerminalNode TYPEID() { return GetToken(CoolParser.TYPEID, 0); }
 		public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
 		}
@@ -307,21 +307,21 @@ public partial class COOLParser : Parser {
 		}
 		public MethodContext(FeatureContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitMethod(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class PropertyContext : FeatureContext {
-		public ITerminalNode OBJECTID() { return GetToken(COOLParser.OBJECTID, 0); }
-		public ITerminalNode TYPEID() { return GetToken(COOLParser.TYPEID, 0); }
-		public ITerminalNode ASSIGNMENT() { return GetToken(COOLParser.ASSIGNMENT, 0); }
+		public ITerminalNode OBJECTID() { return GetToken(CoolParser.OBJECTID, 0); }
+		public ITerminalNode TYPEID() { return GetToken(CoolParser.TYPEID, 0); }
+		public ITerminalNode ASSIGNMENT() { return GetToken(CoolParser.ASSIGNMENT, 0); }
 		public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
 		}
 		public PropertyContext(FeatureContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitProperty(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -410,15 +410,15 @@ public partial class COOLParser : Parser {
 	}
 
 	public partial class FormalContext : ParserRuleContext {
-		public ITerminalNode OBJECTID() { return GetToken(COOLParser.OBJECTID, 0); }
-		public ITerminalNode TYPEID() { return GetToken(COOLParser.TYPEID, 0); }
+		public ITerminalNode OBJECTID() { return GetToken(CoolParser.OBJECTID, 0); }
+		public ITerminalNode TYPEID() { return GetToken(CoolParser.TYPEID, 0); }
 		public FormalContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_formal; } }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFormal(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -460,29 +460,29 @@ public partial class COOLParser : Parser {
 		}
 	}
 	public partial class LetInContext : ExpressionContext {
-		public ITerminalNode LET() { return GetToken(COOLParser.LET, 0); }
-		public ITerminalNode[] OBJECTID() { return GetTokens(COOLParser.OBJECTID); }
+		public ITerminalNode LET() { return GetToken(CoolParser.LET, 0); }
+		public ITerminalNode[] OBJECTID() { return GetTokens(CoolParser.OBJECTID); }
 		public ITerminalNode OBJECTID(int i) {
-			return GetToken(COOLParser.OBJECTID, i);
+			return GetToken(CoolParser.OBJECTID, i);
 		}
-		public ITerminalNode[] TYPEID() { return GetTokens(COOLParser.TYPEID); }
+		public ITerminalNode[] TYPEID() { return GetTokens(CoolParser.TYPEID); }
 		public ITerminalNode TYPEID(int i) {
-			return GetToken(COOLParser.TYPEID, i);
+			return GetToken(CoolParser.TYPEID, i);
 		}
-		public ITerminalNode IN() { return GetToken(COOLParser.IN, 0); }
+		public ITerminalNode IN() { return GetToken(CoolParser.IN, 0); }
 		public ExpressionContext[] expression() {
 			return GetRuleContexts<ExpressionContext>();
 		}
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode[] ASSIGNMENT() { return GetTokens(COOLParser.ASSIGNMENT); }
+		public ITerminalNode[] ASSIGNMENT() { return GetTokens(CoolParser.ASSIGNMENT); }
 		public ITerminalNode ASSIGNMENT(int i) {
-			return GetToken(COOLParser.ASSIGNMENT, i);
+			return GetToken(CoolParser.ASSIGNMENT, i);
 		}
 		public LetInContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitLetIn(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -494,48 +494,48 @@ public partial class COOLParser : Parser {
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode MINUS() { return GetToken(COOLParser.MINUS, 0); }
+		public ITerminalNode MINUS() { return GetToken(CoolParser.MINUS, 0); }
 		public MinusContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitMinus(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class StringContext : ExpressionContext {
-		public ITerminalNode STRING() { return GetToken(COOLParser.STRING, 0); }
+		public ITerminalNode STRING() { return GetToken(CoolParser.STRING, 0); }
 		public StringContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitString(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class IsvoidContext : ExpressionContext {
-		public ITerminalNode ISVOID() { return GetToken(COOLParser.ISVOID, 0); }
+		public ITerminalNode ISVOID() { return GetToken(CoolParser.ISVOID, 0); }
 		public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
 		}
 		public IsvoidContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitIsvoid(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class WhileContext : ExpressionContext {
-		public ITerminalNode WHILE() { return GetToken(COOLParser.WHILE, 0); }
+		public ITerminalNode WHILE() { return GetToken(CoolParser.WHILE, 0); }
 		public ExpressionContext[] expression() {
 			return GetRuleContexts<ExpressionContext>();
 		}
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode LOOP() { return GetToken(COOLParser.LOOP, 0); }
-		public ITerminalNode POOL() { return GetToken(COOLParser.POOL, 0); }
+		public ITerminalNode LOOP() { return GetToken(CoolParser.LOOP, 0); }
+		public ITerminalNode POOL() { return GetToken(CoolParser.POOL, 0); }
 		public WhileContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitWhile(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -547,34 +547,34 @@ public partial class COOLParser : Parser {
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode DIVISION() { return GetToken(COOLParser.DIVISION, 0); }
+		public ITerminalNode DIVISION() { return GetToken(CoolParser.DIVISION, 0); }
 		public DivisionContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitDivision(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class NegativeContext : ExpressionContext {
-		public ITerminalNode INTEGER_NEGATIVE() { return GetToken(COOLParser.INTEGER_NEGATIVE, 0); }
+		public ITerminalNode INTEGER_NEGATIVE() { return GetToken(CoolParser.INTEGER_NEGATIVE, 0); }
 		public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
 		}
 		public NegativeContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitNegative(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class BoolNotContext : ExpressionContext {
-		public ITerminalNode NOT() { return GetToken(COOLParser.NOT, 0); }
+		public ITerminalNode NOT() { return GetToken(CoolParser.NOT, 0); }
 		public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
 		}
 		public BoolNotContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitBoolNot(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -586,10 +586,10 @@ public partial class COOLParser : Parser {
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode LESS_THAN() { return GetToken(COOLParser.LESS_THAN, 0); }
+		public ITerminalNode LESS_THAN() { return GetToken(CoolParser.LESS_THAN, 0); }
 		public LessThanContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitLessThan(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -603,16 +603,16 @@ public partial class COOLParser : Parser {
 		}
 		public BlockContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitBlock(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class IdContext : ExpressionContext {
-		public ITerminalNode OBJECTID() { return GetToken(COOLParser.OBJECTID, 0); }
+		public ITerminalNode OBJECTID() { return GetToken(CoolParser.OBJECTID, 0); }
 		public IdContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitId(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -624,63 +624,63 @@ public partial class COOLParser : Parser {
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode MULTIPLY() { return GetToken(COOLParser.MULTIPLY, 0); }
+		public ITerminalNode MULTIPLY() { return GetToken(CoolParser.MULTIPLY, 0); }
 		public MultiplyContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitMultiply(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class IfContext : ExpressionContext {
-		public ITerminalNode IF() { return GetToken(COOLParser.IF, 0); }
+		public ITerminalNode IF() { return GetToken(CoolParser.IF, 0); }
 		public ExpressionContext[] expression() {
 			return GetRuleContexts<ExpressionContext>();
 		}
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode THEN() { return GetToken(COOLParser.THEN, 0); }
-		public ITerminalNode ELSE() { return GetToken(COOLParser.ELSE, 0); }
-		public ITerminalNode FI() { return GetToken(COOLParser.FI, 0); }
+		public ITerminalNode THEN() { return GetToken(CoolParser.THEN, 0); }
+		public ITerminalNode ELSE() { return GetToken(CoolParser.ELSE, 0); }
+		public ITerminalNode FI() { return GetToken(CoolParser.FI, 0); }
 		public IfContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitIf(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class CaseContext : ExpressionContext {
-		public ITerminalNode CASE() { return GetToken(COOLParser.CASE, 0); }
+		public ITerminalNode CASE() { return GetToken(CoolParser.CASE, 0); }
 		public ExpressionContext[] expression() {
 			return GetRuleContexts<ExpressionContext>();
 		}
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode OF() { return GetToken(COOLParser.OF, 0); }
-		public ITerminalNode ESAC() { return GetToken(COOLParser.ESAC, 0); }
-		public ITerminalNode[] OBJECTID() { return GetTokens(COOLParser.OBJECTID); }
+		public ITerminalNode OF() { return GetToken(CoolParser.OF, 0); }
+		public ITerminalNode ESAC() { return GetToken(CoolParser.ESAC, 0); }
+		public ITerminalNode[] OBJECTID() { return GetTokens(CoolParser.OBJECTID); }
 		public ITerminalNode OBJECTID(int i) {
-			return GetToken(COOLParser.OBJECTID, i);
+			return GetToken(CoolParser.OBJECTID, i);
 		}
-		public ITerminalNode[] TYPEID() { return GetTokens(COOLParser.TYPEID); }
+		public ITerminalNode[] TYPEID() { return GetTokens(CoolParser.TYPEID); }
 		public ITerminalNode TYPEID(int i) {
-			return GetToken(COOLParser.TYPEID, i);
+			return GetToken(CoolParser.TYPEID, i);
 		}
-		public ITerminalNode[] CASE_ARROW() { return GetTokens(COOLParser.CASE_ARROW); }
+		public ITerminalNode[] CASE_ARROW() { return GetTokens(CoolParser.CASE_ARROW); }
 		public ITerminalNode CASE_ARROW(int i) {
-			return GetToken(COOLParser.CASE_ARROW, i);
+			return GetToken(CoolParser.CASE_ARROW, i);
 		}
 		public CaseContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitCase(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class OwnMethodCallContext : ExpressionContext {
-		public ITerminalNode OBJECTID() { return GetToken(COOLParser.OBJECTID, 0); }
+		public ITerminalNode OBJECTID() { return GetToken(CoolParser.OBJECTID, 0); }
 		public ExpressionContext[] expression() {
 			return GetRuleContexts<ExpressionContext>();
 		}
@@ -689,7 +689,7 @@ public partial class COOLParser : Parser {
 		}
 		public OwnMethodCallContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitOwnMethodCall(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -701,20 +701,20 @@ public partial class COOLParser : Parser {
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode ADD() { return GetToken(COOLParser.ADD, 0); }
+		public ITerminalNode ADD() { return GetToken(CoolParser.ADD, 0); }
 		public AddContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitAdd(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class NewContext : ExpressionContext {
-		public ITerminalNode NEW() { return GetToken(COOLParser.NEW, 0); }
-		public ITerminalNode TYPEID() { return GetToken(COOLParser.TYPEID, 0); }
+		public ITerminalNode NEW() { return GetToken(CoolParser.NEW, 0); }
+		public ITerminalNode TYPEID() { return GetToken(CoolParser.TYPEID, 0); }
 		public NewContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitNew(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -725,38 +725,38 @@ public partial class COOLParser : Parser {
 		}
 		public ParenthesesContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitParentheses(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class AssignmentContext : ExpressionContext {
-		public ITerminalNode OBJECTID() { return GetToken(COOLParser.OBJECTID, 0); }
-		public ITerminalNode ASSIGNMENT() { return GetToken(COOLParser.ASSIGNMENT, 0); }
+		public ITerminalNode OBJECTID() { return GetToken(CoolParser.OBJECTID, 0); }
+		public ITerminalNode ASSIGNMENT() { return GetToken(CoolParser.ASSIGNMENT, 0); }
 		public ExpressionContext expression() {
 			return GetRuleContext<ExpressionContext>(0);
 		}
 		public AssignmentContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitAssignment(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class FalseContext : ExpressionContext {
-		public ITerminalNode FALSE() { return GetToken(COOLParser.FALSE, 0); }
+		public ITerminalNode FALSE() { return GetToken(CoolParser.FALSE, 0); }
 		public FalseContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitFalse(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class IntContext : ExpressionContext {
-		public ITerminalNode INT() { return GetToken(COOLParser.INT, 0); }
+		public ITerminalNode INT() { return GetToken(CoolParser.INT, 0); }
 		public IntContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitInt(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -768,19 +768,19 @@ public partial class COOLParser : Parser {
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode EQUAL() { return GetToken(COOLParser.EQUAL, 0); }
+		public ITerminalNode EQUAL() { return GetToken(CoolParser.EQUAL, 0); }
 		public EqualContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitEqual(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class TrueContext : ExpressionContext {
-		public ITerminalNode TRUE() { return GetToken(COOLParser.TRUE, 0); }
+		public ITerminalNode TRUE() { return GetToken(CoolParser.TRUE, 0); }
 		public TrueContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitTrue(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -792,10 +792,10 @@ public partial class COOLParser : Parser {
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode LESS_EQUAL() { return GetToken(COOLParser.LESS_EQUAL, 0); }
+		public ITerminalNode LESS_EQUAL() { return GetToken(CoolParser.LESS_EQUAL, 0); }
 		public LessEqualContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitLessEqual(this);
 			else return visitor.VisitChildren(this);
 		}
@@ -807,11 +807,11 @@ public partial class COOLParser : Parser {
 		public ExpressionContext expression(int i) {
 			return GetRuleContext<ExpressionContext>(i);
 		}
-		public ITerminalNode OBJECTID() { return GetToken(COOLParser.OBJECTID, 0); }
-		public ITerminalNode TYPEID() { return GetToken(COOLParser.TYPEID, 0); }
+		public ITerminalNode OBJECTID() { return GetToken(CoolParser.OBJECTID, 0); }
+		public ITerminalNode TYPEID() { return GetToken(CoolParser.TYPEID, 0); }
 		public MethodCallContext(ExpressionContext context) { CopyFrom(context); }
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			ICOOLVisitor<TResult> typedVisitor = visitor as ICOOLVisitor<TResult>;
+			ICoolVisitor<TResult> typedVisitor = visitor as ICoolVisitor<TResult>;
 			if (typedVisitor != null) return typedVisitor.VisitMethodCall(this);
 			else return visitor.VisitChildren(this);
 		}

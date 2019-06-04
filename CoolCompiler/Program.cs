@@ -7,6 +7,8 @@ using Antlr4.Runtime;
 using CoolCompiler.SemanticCheck;
 using CoolCompiler.AST;
 using Antlr4.Runtime.Tree;
+using CoolCompiler.ANTLR;
+
 
 namespace CoolCompiler
 {
@@ -14,6 +16,11 @@ namespace CoolCompiler
     {
         static void Main(string[] args)
         {
+
+            var input = new AntlrFileStream("C:/Users/Leandro/Desktop/Compiler/CoolCompiler/input.cl");
+            var lexer = new CoolLexer(input);
+
+
         }
     }
 }

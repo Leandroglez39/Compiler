@@ -29,7 +29,7 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.7.1")]
 [System.CLSCompliant(false)]
-public partial class COOLLexer : Lexer {
+public partial class CoolLexer : Lexer {
 	protected static DFA[] decisionToDFA;
 	protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
 	public const int
@@ -60,10 +60,10 @@ public partial class COOLLexer : Lexer {
 	};
 
 
-	public COOLLexer(ICharStream input)
+	public CoolLexer(ICharStream input)
 	: this(input, Console.Out, Console.Error) { }
 
-	public COOLLexer(ICharStream input, TextWriter output, TextWriter errorOutput)
+	public CoolLexer(ICharStream input, TextWriter output, TextWriter errorOutput)
 	: base(input, output, errorOutput)
 	{
 		Interpreter = new LexerATNSimulator(this, _ATN, decisionToDFA, sharedContextCache);
@@ -104,7 +104,7 @@ public partial class COOLLexer : Lexer {
 
 	public override string SerializedAtn { get { return new string(_serializedATN); } }
 
-	static COOLLexer() {
+	static CoolLexer() {
 		decisionToDFA = new DFA[_ATN.NumberOfDecisions];
 		for (int i = 0; i < _ATN.NumberOfDecisions; i++) {
 			decisionToDFA[i] = new DFA(_ATN.GetDecisionState(i), i);
