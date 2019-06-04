@@ -12,7 +12,7 @@ namespace CoolCompiler.AST
 
         public List<FeatureNode> FeatureNodes { get; set; }
 
-        public IScope Scope { get; set; }
+        //public IScope Scope { get; set; }
 
         public ClassNode(ParserRuleContext context) : base(context)
         {

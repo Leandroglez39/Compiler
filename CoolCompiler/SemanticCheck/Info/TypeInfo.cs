@@ -1,4 +1,6 @@
-﻿namespace CoolCompiler.SemanticCheck.Info
+﻿using CoolCompiler.AST;
+
+namespace CoolCompiler.SemanticCheck.Info
 {
     public class TypeInfo
     {

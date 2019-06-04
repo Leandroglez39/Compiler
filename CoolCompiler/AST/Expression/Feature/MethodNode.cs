@@ -1,5 +1,5 @@
 ﻿using Antlr4.Runtime;
-using CoolCompiler.AST.Expression;
+using System.Collections.Generic;
 using CoolCompiler.SemanticCheck;
 
 namespace CoolCompiler.AST

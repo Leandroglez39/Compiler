@@ -20,6 +20,15 @@ namespace CoolCompiler
             var input = new AntlrFileStream("C:/Users/Leandro/Desktop/Compiler/CoolCompiler/input.cl");
             var lexer = new CoolLexer(input);
 
+            var errors = new List<string>();
+            lexer.RemoveErrorListeners();
+            
+
+            var tokens = new CommonTokenStream(lexer);
+
+            var parser = new CoolParser(tokens);
+
+            Console.WriteLine( parser.program().ToStringTree() );
 
         }
     }
