@@ -45,16 +45,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ANTLR\COOLBaseVisitor.cs" />
-    <Compile Include="ANTLR\COOLLexer.cs" />
-    <Compile Include="ANTLR\COOLParser.cs" />
-    <Compile Include="ANTLR\COOLVisitor.cs" />
+    <Compile Include="ANTLR\CoolBaseVisitor.cs" />
+    <Compile Include="ANTLR\CoolLexer.cs" />
+    <Compile Include="ANTLR\CoolParser.cs" />
+    <Compile Include="ANTLR\CoolVisitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ANTLR\COOL.g4" />
+    <None Include="ANTLR\Cool.g4" />
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AST\" />
+    <Folder Include="CodeGenerations\" />
+    <Folder Include="SemanticCheck\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
