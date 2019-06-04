@@ -3,7 +3,7 @@ using CoolCompiler.SemanticCheck;
 
 
 
-namespace CoolCompiler.AST.Expression
+namespace CoolCompiler.AST
 {
     public class DispatchImplicitNode : DispatchNode
     {

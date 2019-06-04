@@ -1,9 +1,11 @@
 ﻿using CoolCompiler.AST;
 
+
 namespace CoolCompiler.SemanticCheck
 {
     public interface IVisitor
     {
+                  
         void Visit(ArithmeticOperation node);
         void Visit(AssignmentNode node);
         void Visit(AttributeNode node);

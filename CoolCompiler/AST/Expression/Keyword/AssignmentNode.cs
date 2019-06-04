@@ -1,7 +1,7 @@
 ﻿using Antlr4.Runtime;
 using CoolCompiler.SemanticCheck;
 
-namespace CoolCompiler.AST.Expression
+namespace CoolCompiler.AST
 {
     public class AssignmentNode :ExpressionNode
     {

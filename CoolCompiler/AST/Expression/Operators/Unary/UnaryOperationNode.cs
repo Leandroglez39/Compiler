@@ -1,6 +1,6 @@
 ﻿using Antlr4.Runtime;
 
-namespace CoolCompiler.AST.Expression.Operators.Unary
+namespace CoolCompiler.AST
 {
     public abstract class UnaryOperationNode : ExpressionNode
     {

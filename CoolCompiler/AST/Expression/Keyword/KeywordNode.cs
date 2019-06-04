@@ -1,6 +1,6 @@
 ﻿using Antlr4.Runtime;
 
-namespace CoolCompiler.AST.Expression.Keyword
+namespace CoolCompiler.AST
 {
     public abstract class KeywordNode : ExpressionNode
     {

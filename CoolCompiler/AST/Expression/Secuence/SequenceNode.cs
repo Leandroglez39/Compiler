@@ -2,7 +2,7 @@
 using CoolCompiler.SemanticCheck;
 using System.Collections.Generic;
 
-namespace CoolCompiler.AST.Expression.Secuence
+namespace CoolCompiler.AST
 {
     public class SequenceNode :ExpressionNode
     {

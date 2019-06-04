@@ -2,7 +2,7 @@
 using Antlr4.Runtime;
 using CoolCompiler.SemanticCheck;
 
-namespace CoolCompiler.AST.Expression.Operators.Binary
+namespace CoolCompiler.AST
 {
     public abstract class BinaryOperationNode :ExpressionNode
     {

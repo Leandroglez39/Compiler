@@ -2,7 +2,7 @@
 using Antlr4.Runtime;
 using System.Collections.Generic;
 
-namespace CoolCompiler.AST.Expression
+namespace CoolCompiler.AST
 {
     public abstract class DispatchNode : ExpressionNode
     {

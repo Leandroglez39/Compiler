@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Antlr4.Runtime;
 using CoolCompiler.SemanticCheck.Info;
 
-namespace CoolCompiler.AST.Expression
+namespace CoolCompiler.AST
 {
     public abstract class ExpressionNode : ASTNode, IVisit
     {

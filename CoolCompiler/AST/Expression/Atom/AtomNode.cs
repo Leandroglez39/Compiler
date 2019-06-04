@@ -1,6 +1,6 @@
 ﻿using Antlr4.Runtime;
 
-namespace CoolCompiler.AST.Expression
+namespace CoolCompiler.AST
 {
     public abstract class AtomNode : ExpressionNode
     {

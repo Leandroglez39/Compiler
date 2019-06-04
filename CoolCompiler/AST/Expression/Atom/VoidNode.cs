@@ -2,7 +2,7 @@
 using CoolCompiler.SemanticCheck;
 
 
-namespace CoolCompiler.AST.Expression.Atom
+namespace CoolCompiler.AST
 {
     public class VoidNode : AtomNode
     {

@@ -2,7 +2,7 @@
 using CoolCompiler.SemanticCheck;
 
 
-namespace CoolCompiler.AST.Expression.Keyword
+namespace CoolCompiler.AST
 {
     public class NewNode : KeywordNode
     {

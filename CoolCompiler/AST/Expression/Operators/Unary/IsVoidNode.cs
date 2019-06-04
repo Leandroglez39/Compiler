@@ -2,7 +2,7 @@
 using CoolCompiler.SemanticCheck;
 
 
-namespace CoolCompiler.AST.Expression.Operators.Unary
+namespace CoolCompiler.AST
 {
     public class IsVoidNode : UnaryOperationNode
     {

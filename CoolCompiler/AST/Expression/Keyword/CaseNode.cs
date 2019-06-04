@@ -2,7 +2,7 @@
 using CoolCompiler.SemanticCheck;
 using System.Collections.Generic;
 
-namespace CoolCompiler.AST.Expression.Keyword
+namespace CoolCompiler.AST
 {
     public class CaseNode : KeywordNode
     {

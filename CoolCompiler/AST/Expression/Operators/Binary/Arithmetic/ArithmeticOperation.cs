@@ -1,7 +1,7 @@
 ﻿using Antlr4.Runtime;
 
 
-namespace CoolCompiler.AST.Expression.Operators.Binary.Arithmetic
+namespace CoolCompiler.AST
 {
     public abstract class ArithmeticOperation :BinaryOperationNode
     {

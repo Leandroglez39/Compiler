@@ -1,7 +1,7 @@
 ﻿using Antlr4.Runtime;
 using CoolCompiler.SemanticCheck;
 
-namespace CoolCompiler.AST.Expression.Operators.Binary.Arithmetic
+namespace CoolCompiler.AST
 {
     public class AddNode : ArithmeticOperation
     {
