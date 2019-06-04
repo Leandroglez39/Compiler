@@ -79,6 +79,10 @@
     <Compile Include="AST\Expression\Operators\Binary\Arithmetic\MulNode.cs" />
     <Compile Include="AST\Expression\Operators\Binary\Arithmetic\SubNode.cs" />
     <Compile Include="AST\Expression\Operators\Binary\BinaryOperationNode.cs" />
+    <Compile Include="AST\Expression\Operators\Binary\Comparison\ComparisonOperation.cs" />
+    <Compile Include="AST\Expression\Operators\Binary\Comparison\EqualNode.cs" />
+    <Compile Include="AST\Expression\Operators\Binary\Comparison\Less.cs" />
+    <Compile Include="AST\Expression\Operators\Binary\Comparison\LessEqual.cs" />
     <Compile Include="AST\Expression\Operators\Unary\IsVoidNode.cs" />
     <Compile Include="AST\Expression\Operators\Unary\NegNode.cs" />
     <Compile Include="AST\Expression\Operators\Unary\NotNode.cs" />
@@ -99,7 +103,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AST\Expression\Operators\Binary\Comparison\" />
     <Folder Include="CodeGenerations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
