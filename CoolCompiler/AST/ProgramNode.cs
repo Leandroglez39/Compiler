@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace CoolCompiler.AST
 {
-    public abstract class ProgramNode : ASTNode, IVisit
+    public class ProgramNode : ASTNode, IVisit
     {
         public List<ClassNode> Classes { get; set; }
 
