@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ANTLR\ASTBuilder.cs" />
     <Compile Include="ANTLR\CoolBaseVisitor.cs" />
     <Compile Include="ANTLR\CoolLexer.cs" />
     <Compile Include="ANTLR\CoolParser.cs" />
@@ -88,9 +89,9 @@
     <Compile Include="AST\Expression\Operators\Unary\NotNode.cs" />
     <Compile Include="AST\Expression\Operators\Unary\UnaryOperationNode.cs" />
     <Compile Include="AST\Expression\Secuence\SequenceNode.cs" />
-    <Compile Include="AST\Feature\AttributeNode.cs" />
-    <Compile Include="AST\Feature\FeatureNode.cs" />
-    <Compile Include="AST\Feature\MethodNode.cs" />
+    <Compile Include="AST\Expression\Feature\AttributeNode.cs" />
+    <Compile Include="AST\Expression\Feature\FeatureNode.cs" />
+    <Compile Include="AST\Expression\Feature\MethodNode.cs" />
     <Compile Include="AST\ProgramNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,6 +102,8 @@
   <ItemGroup>
     <None Include="ANTLR\Cool.g4" />
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CodeGenerations\" />
