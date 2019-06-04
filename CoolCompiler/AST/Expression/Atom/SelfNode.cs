@@ -3,7 +3,7 @@ using CoolCompiler.SemanticCheck;
 
 namespace CoolCompiler.AST
 {
-    class SelfNode :AtomNode
+    public class SelfNode : AtomNode
     {
         public SelfNode(ParserRuleContext context) : base(context)
         {
