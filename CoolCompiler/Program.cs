@@ -29,6 +29,7 @@ namespace CoolCompiler
             var parser = new CoolParser(tokens);
 
             Console.WriteLine( parser.program().ToStringTree(parser) );
+            Console.WriteLine(  );
 
         }
     }
