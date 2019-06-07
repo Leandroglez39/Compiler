@@ -220,7 +220,10 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitIsvoid([NotNull] CoolParser.IsvoidContext context)
         {
-            return base.VisitIsvoid(context);
+            return new IsVoidNode(context)
+            {
+                Operand = Visit(context.expression()) as ExpressionNode
+            };
         }
 
         public override ASTNode VisitLetIn([NotNull] CoolParser.LetInContext context)
