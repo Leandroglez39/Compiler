@@ -168,7 +168,11 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitDispatchImplicit([NotNull] CoolParser.DispatchImplicitContext context)
         {
-            return base.VisitDispatchImplicit(context);
+            return new DispatchImplicitNode(context)
+            {
+                IdMethod = new IdNode(context, context.ID().GetText()),
+                Arguments = (from x in context.expression() select Visit(x) as ExpressionNode).ToList()
+            };
         }
 
         public override ASTNode VisitErrorNode(IErrorNode node)
