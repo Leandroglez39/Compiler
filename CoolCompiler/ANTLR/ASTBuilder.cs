@@ -307,6 +307,8 @@ namespace CoolCompiler.ANTLR
             return new StringNode(context, context.STRING().GetText());
         }
 
+
+        //Mirar terminal VisitTerminal
         public override ASTNode VisitTerminal(ITerminalNode node)
         {
             return base.VisitTerminal(node);
