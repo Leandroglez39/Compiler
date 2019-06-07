@@ -60,7 +60,11 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitAssignment([NotNull] CoolParser.AssignmentContext context)
         {
-            return base.VisitAssignment(context);
+            return new AssignmentNode(context)
+            {
+                ID = new IdentifierNode(context, context.ID().GetText()),
+                ExpressionRight = Visit(context.expression()) as ExpressionNode
+            };
         }
 
         public override ASTNode VisitBlock([NotNull] CoolParser.BlockContext context)
