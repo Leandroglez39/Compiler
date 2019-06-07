@@ -205,7 +205,12 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitIf([NotNull] CoolParser.IfContext context)
         {
-            return base.VisitIf(context);
+            return new IfNode(context)
+            {
+                Condition = Visit(context.expression(0)) as ExpressionNode,   //  if expression
+                Body = Visit(context.expression(1)) as ExpressionNode,   //then expression
+                ElseBody = Visit(context.expression(2)) as ExpressionNode    //else expression
+            };
         }
 
         public override ASTNode VisitInt([NotNull] CoolParser.IntContext context)
