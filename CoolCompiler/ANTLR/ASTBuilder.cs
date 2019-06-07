@@ -82,7 +82,10 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitBoolNot([NotNull] CoolParser.BoolNotContext context)
         {
-            return base.VisitBoolNot(context);
+            return new NotNode(context)
+            {
+                Operand = Visit(context.expression()) as ExpressionNode
+            };
         }
 
         public override ASTNode VisitCase([NotNull] CoolParser.CaseContext context)
