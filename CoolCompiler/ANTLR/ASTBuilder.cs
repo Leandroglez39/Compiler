@@ -7,7 +7,7 @@ namespace CoolCompiler.ANTLR
 {
     public class ASTBuilder : CoolBaseVisitor<ASTNode>
     {
-        
+        protected override ASTNode DefaultResult => base.DefaultResult;
 
         public override bool Equals(object obj)
         {
@@ -29,9 +29,9 @@ namespace CoolCompiler.ANTLR
             return base.Visit(tree);
         }
 
-        public override ASTNode VisitAdd([NotNull] CoolParser.AddContext context)
+        public override ASTNode VisitArithmetic([NotNull] CoolParser.ArithmeticContext context)
         {
-            return base.VisitAdd(context);
+            return base.VisitArithmetic(context);
         }
 
         public override ASTNode VisitAssignment([NotNull] CoolParser.AssignmentContext context)
@@ -42,6 +42,11 @@ namespace CoolCompiler.ANTLR
         public override ASTNode VisitBlock([NotNull] CoolParser.BlockContext context)
         {
             return base.VisitBlock(context);
+        }
+
+        public override ASTNode VisitBoolean([NotNull] CoolParser.BooleanContext context)
+        {
+            return base.VisitBoolean(context);
         }
 
         public override ASTNode VisitBoolNot([NotNull] CoolParser.BoolNotContext context)
@@ -64,24 +69,19 @@ namespace CoolCompiler.ANTLR
             return base.VisitClassDefine(context);
         }
 
-        public override ASTNode VisitClasses([NotNull] CoolParser.ClassesContext context)
+        public override ASTNode VisitComparisson([NotNull] CoolParser.ComparissonContext context)
         {
-            return base.VisitClasses(context);
+            return base.VisitComparisson(context);
         }
 
-        public override ASTNode VisitDivision([NotNull] CoolParser.DivisionContext context)
+        public override ASTNode VisitDispatchExplicit([NotNull] CoolParser.DispatchExplicitContext context)
         {
-            return base.VisitDivision(context);
+            return base.VisitDispatchExplicit(context);
         }
 
-        public override ASTNode VisitEof([NotNull] CoolParser.EofContext context)
+        public override ASTNode VisitDispatchImplicit([NotNull] CoolParser.DispatchImplicitContext context)
         {
-            return base.VisitEof(context);
-        }
-
-        public override ASTNode VisitEqual([NotNull] CoolParser.EqualContext context)
-        {
-            return base.VisitEqual(context);
+            return base.VisitDispatchImplicit(context);
         }
 
         public override ASTNode VisitErrorNode(IErrorNode node)
@@ -89,9 +89,9 @@ namespace CoolCompiler.ANTLR
             return base.VisitErrorNode(node);
         }
 
-        public override ASTNode VisitFalse([NotNull] CoolParser.FalseContext context)
+        public override ASTNode VisitFeature([NotNull] CoolParser.FeatureContext context)
         {
-            return base.VisitFalse(context);
+            return base.VisitFeature(context);
         }
 
         public override ASTNode VisitFormal([NotNull] CoolParser.FormalContext context)
@@ -119,16 +119,6 @@ namespace CoolCompiler.ANTLR
             return base.VisitIsvoid(context);
         }
 
-        public override ASTNode VisitLessEqual([NotNull] CoolParser.LessEqualContext context)
-        {
-            return base.VisitLessEqual(context);
-        }
-
-        public override ASTNode VisitLessThan([NotNull] CoolParser.LessThanContext context)
-        {
-            return base.VisitLessThan(context);
-        }
-
         public override ASTNode VisitLetIn([NotNull] CoolParser.LetInContext context)
         {
             return base.VisitLetIn(context);
@@ -139,21 +129,6 @@ namespace CoolCompiler.ANTLR
             return base.VisitMethod(context);
         }
 
-        public override ASTNode VisitMethodCall([NotNull] CoolParser.MethodCallContext context)
-        {
-            return base.VisitMethodCall(context);
-        }
-
-        public override ASTNode VisitMinus([NotNull] CoolParser.MinusContext context)
-        {
-            return base.VisitMinus(context);
-        }
-
-        public override ASTNode VisitMultiply([NotNull] CoolParser.MultiplyContext context)
-        {
-            return base.VisitMultiply(context);
-        }
-
         public override ASTNode VisitNegative([NotNull] CoolParser.NegativeContext context)
         {
             return base.VisitNegative(context);
@@ -162,11 +137,6 @@ namespace CoolCompiler.ANTLR
         public override ASTNode VisitNew([NotNull] CoolParser.NewContext context)
         {
             return base.VisitNew(context);
-        }
-
-        public override ASTNode VisitOwnMethodCall([NotNull] CoolParser.OwnMethodCallContext context)
-        {
-            return base.VisitOwnMethodCall(context);
         }
 
         public override ASTNode VisitParentheses([NotNull] CoolParser.ParenthesesContext context)
@@ -192,11 +162,6 @@ namespace CoolCompiler.ANTLR
         public override ASTNode VisitTerminal(ITerminalNode node)
         {
             return base.VisitTerminal(node);
-        }
-
-        public override ASTNode VisitTrue([NotNull] CoolParser.TrueContext context)
-        {
-            return base.VisitTrue(context);
         }
 
         public override ASTNode VisitWhile([NotNull] CoolParser.WhileContext context)
