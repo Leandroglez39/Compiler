@@ -1,12 +1,13 @@
 ﻿using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;
 using CoolCompiler.AST;
+using System.Linq;
 
 namespace CoolCompiler.ANTLR
 {
     public class ASTBuilder : CoolBaseVisitor<ASTNode>
     {
-        protected override ASTNode DefaultResult => base.DefaultResult;
+        
 
         public override bool Equals(object obj)
         {

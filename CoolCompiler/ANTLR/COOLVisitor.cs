@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:\Users\Leandro\Desktop\Compiler\CoolCompiler\ANTLR\COOL.g4 by ANTLR 4.7.1
+// Generated from C:\Users\Leandro\Desktop\Compiler\CoolCompiler\ANTLR\Cool.g4 by ANTLR 4.7.1
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -38,35 +38,25 @@ public interface ICoolVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitProgram([NotNull] CoolParser.ProgramContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>classes</c>
-	/// labeled alternative in <see cref="CoolParser.programBlocks"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitClasses([NotNull] CoolParser.ClassesContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>eof</c>
-	/// labeled alternative in <see cref="CoolParser.programBlocks"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitEof([NotNull] CoolParser.EofContext context);
-	/// <summary>
 	/// Visit a parse tree produced by <see cref="CoolParser.classDefine"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitClassDefine([NotNull] CoolParser.ClassDefineContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>method</c>
-	/// labeled alternative in <see cref="CoolParser.feature"/>.
+	/// Visit a parse tree produced by <see cref="CoolParser.feature"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitFeature([NotNull] CoolParser.FeatureContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CoolParser.method"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitMethod([NotNull] CoolParser.MethodContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>property</c>
-	/// labeled alternative in <see cref="CoolParser.feature"/>.
+	/// Visit a parse tree produced by <see cref="CoolParser.property"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
@@ -77,118 +67,6 @@ public interface ICoolVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitFormal([NotNull] CoolParser.FormalContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>letIn</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitLetIn([NotNull] CoolParser.LetInContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>minus</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitMinus([NotNull] CoolParser.MinusContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>string</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitString([NotNull] CoolParser.StringContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>isvoid</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitIsvoid([NotNull] CoolParser.IsvoidContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>while</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitWhile([NotNull] CoolParser.WhileContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>division</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitDivision([NotNull] CoolParser.DivisionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>negative</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitNegative([NotNull] CoolParser.NegativeContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>boolNot</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitBoolNot([NotNull] CoolParser.BoolNotContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>lessThan</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitLessThan([NotNull] CoolParser.LessThanContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>block</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitBlock([NotNull] CoolParser.BlockContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>id</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitId([NotNull] CoolParser.IdContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>multiply</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitMultiply([NotNull] CoolParser.MultiplyContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>if</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitIf([NotNull] CoolParser.IfContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>case</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitCase([NotNull] CoolParser.CaseContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>ownMethodCall</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitOwnMethodCall([NotNull] CoolParser.OwnMethodCallContext context);
-	/// <summary>
-	/// Visit a parse tree produced by the <c>add</c>
-	/// labeled alternative in <see cref="CoolParser.expression"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitAdd([NotNull] CoolParser.AddContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>new</c>
 	/// labeled alternative in <see cref="CoolParser.expression"/>.
@@ -204,6 +82,27 @@ public interface ICoolVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitParentheses([NotNull] CoolParser.ParenthesesContext context);
 	/// <summary>
+	/// Visit a parse tree produced by the <c>letIn</c>
+	/// labeled alternative in <see cref="CoolParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLetIn([NotNull] CoolParser.LetInContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>string</c>
+	/// labeled alternative in <see cref="CoolParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitString([NotNull] CoolParser.StringContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>isvoid</c>
+	/// labeled alternative in <see cref="CoolParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIsvoid([NotNull] CoolParser.IsvoidContext context);
+	/// <summary>
 	/// Visit a parse tree produced by the <c>assignment</c>
 	/// labeled alternative in <see cref="CoolParser.expression"/>.
 	/// </summary>
@@ -211,12 +110,26 @@ public interface ICoolVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitAssignment([NotNull] CoolParser.AssignmentContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>false</c>
+	/// Visit a parse tree produced by the <c>arithmetic</c>
 	/// labeled alternative in <see cref="CoolParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitFalse([NotNull] CoolParser.FalseContext context);
+	Result VisitArithmetic([NotNull] CoolParser.ArithmeticContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>while</c>
+	/// labeled alternative in <see cref="CoolParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitWhile([NotNull] CoolParser.WhileContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>dispatchImplicit</c>
+	/// labeled alternative in <see cref="CoolParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitDispatchImplicit([NotNull] CoolParser.DispatchImplicitContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>int</c>
 	/// labeled alternative in <see cref="CoolParser.expression"/>.
@@ -225,31 +138,66 @@ public interface ICoolVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitInt([NotNull] CoolParser.IntContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>equal</c>
+	/// Visit a parse tree produced by the <c>negative</c>
 	/// labeled alternative in <see cref="CoolParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitEqual([NotNull] CoolParser.EqualContext context);
+	Result VisitNegative([NotNull] CoolParser.NegativeContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>true</c>
+	/// Visit a parse tree produced by the <c>boolNot</c>
 	/// labeled alternative in <see cref="CoolParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitTrue([NotNull] CoolParser.TrueContext context);
+	Result VisitBoolNot([NotNull] CoolParser.BoolNotContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>lessEqual</c>
+	/// Visit a parse tree produced by the <c>boolean</c>
 	/// labeled alternative in <see cref="CoolParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitLessEqual([NotNull] CoolParser.LessEqualContext context);
+	Result VisitBoolean([NotNull] CoolParser.BooleanContext context);
 	/// <summary>
-	/// Visit a parse tree produced by the <c>methodCall</c>
+	/// Visit a parse tree produced by the <c>block</c>
 	/// labeled alternative in <see cref="CoolParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitMethodCall([NotNull] CoolParser.MethodCallContext context);
+	Result VisitBlock([NotNull] CoolParser.BlockContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>comparisson</c>
+	/// labeled alternative in <see cref="CoolParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitComparisson([NotNull] CoolParser.ComparissonContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>id</c>
+	/// labeled alternative in <see cref="CoolParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitId([NotNull] CoolParser.IdContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>if</c>
+	/// labeled alternative in <see cref="CoolParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIf([NotNull] CoolParser.IfContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>case</c>
+	/// labeled alternative in <see cref="CoolParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitCase([NotNull] CoolParser.CaseContext context);
+	/// <summary>
+	/// Visit a parse tree produced by the <c>dispatchExplicit</c>
+	/// labeled alternative in <see cref="CoolParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitDispatchExplicit([NotNull] CoolParser.DispatchExplicitContext context);
 }
