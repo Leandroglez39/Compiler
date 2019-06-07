@@ -283,12 +283,28 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitProperty([NotNull] CoolParser.PropertyContext context)
         {
-            return base.VisitProperty(context);
+            AttributeNode node = new AttributeNode(context)
+            {
+                Formal = Visit(context.formal()) as FormalNode
+            };
+
+            if (context.expression() != null)
+                node.AssignExp = Visit(context.expression()) as ExpressionNode;
+            else if (node.Formal.Type.Text == "Int")
+                node.AssignExp = new IntNode(context, "0");
+            else if (node.Formal.Type.Text == "Bool")
+                node.AssignExp = new BoolNode(context, "false");
+            else if (node.Formal.Type.Text == "String")
+                node.AssignExp = new StringNode(context, "");
+            else
+                node.AssignExp = new VoidNode(node.Formal.Type.Text);
+
+            return node;
         }
 
         public override ASTNode VisitString([NotNull] CoolParser.StringContext context)
         {
-            return base.VisitString(context);
+            return new StringNode(context, context.STRING().GetText());
         }
 
         public override ASTNode VisitTerminal(ITerminalNode node)
