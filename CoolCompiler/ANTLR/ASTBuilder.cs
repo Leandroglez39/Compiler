@@ -69,7 +69,10 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitBlock([NotNull] CoolParser.BlockContext context)
         {
-            return base.VisitBlock(context);
+            return new SequenceNode(context)
+            {
+                Sequence = context.expression().Select(x => Visit(x) as ExpressionNode).ToList()
+            };
         }
 
         public override ASTNode VisitBoolean([NotNull] CoolParser.BooleanContext context)
