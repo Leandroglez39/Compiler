@@ -103,6 +103,8 @@ namespace CoolCompiler.ANTLR
             return node;
         }
 
+
+        //Terminar de ser necesario
         public override ASTNode VisitChildren(IRuleNode node)
         {
             return base.VisitChildren(node);
@@ -110,7 +112,16 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitClassDefine([NotNull] CoolParser.ClassDefineContext context)
         {
-            return base.VisitClassDefine(context);
+            ClassNode node = new ClassNode(context);
+            TypeNode typeClass = new TypeNode(context.TYPE(0).Symbol.Line, context.TYPE(0).Symbol.Column, context.TYPE(0).GetText());
+            var typeInherit = context.TYPE(1) == null ? TypeNode.OBJECT : new TypeNode(context.TYPE(1).Symbol.Line,
+                context.TYPE(1).Symbol.Column, context.TYPE(1).GetText());
+
+            node.TypeClass = typeClass;
+            node.TypeInherit = typeInherit;
+            node.FeatureNodes = (from x in context.feature() select Visit(x) as FeatureNode).ToList();
+
+            return node;
         }
 
         public override ASTNode VisitComparisson([NotNull] CoolParser.ComparissonContext context)
