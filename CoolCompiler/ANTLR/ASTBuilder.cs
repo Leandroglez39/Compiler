@@ -228,7 +228,12 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitLetIn([NotNull] CoolParser.LetInContext context)
         {
-            return base.VisitLetIn(context);
+            LetNode node = new LetNode(context)
+            {
+                Initialization = (from x in context.property() select Visit(x) as AttributeNode).ToList(),
+                ExpressionBody = Visit(context.expression()) as ExpressionNode
+            };
+            return node;
         }
 
         public override ASTNode VisitMethod([NotNull] CoolParser.MethodContext context)
