@@ -126,7 +126,26 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitComparisson([NotNull] CoolParser.ComparissonContext context)
         {
-            return base.VisitComparisson(context);
+            ComparisonOperation operators;
+            switch (context.op.Text)
+            {
+                case "<=":
+                    operators = new LessEqual(context);
+                    break;
+                case "<":
+                    operators = new Less(context);
+                    break;
+                case "=":
+                    operators = new EqualNode(context);
+                    break;
+                default:
+                    throw new NotSupportedException();
+            }
+
+
+            operators.LeftOperand = Visit(context.expression(0)) as ExpressionNode;      // LEFT EXPRESSION
+            operators.RightOperand = Visit(context.expression(1)) as ExpressionNode;     //RIGHT EXPRESSION
+            return operators;
         }
 
         public override ASTNode VisitDispatchExplicit([NotNull] CoolParser.DispatchExplicitContext context)
