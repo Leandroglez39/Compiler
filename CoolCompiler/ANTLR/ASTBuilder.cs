@@ -262,7 +262,10 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitNew([NotNull] CoolParser.NewContext context)
         {
-            return base.VisitNew(context);
+            return new NewNode(context)
+            {
+                TypeId = new TypeNode(context.TYPE().Symbol.Line, context.TYPE().Symbol.Column, context.TYPE().GetText())
+            };
         }
 
         public override ASTNode VisitParentheses([NotNull] CoolParser.ParenthesesContext context)
