@@ -2,6 +2,7 @@
 using Antlr4.Runtime.Tree;
 using CoolCompiler.AST;
 using System.Linq;
+using System;
 
 namespace CoolCompiler.ANTLR
 {
@@ -31,7 +32,30 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitArithmetic([NotNull] CoolParser.ArithmeticContext context)
         {
-            return base.VisitArithmetic(context);
+            ArithmeticOperation operators;
+
+            switch (context.op.Text)
+            {
+                case "*":
+                    operators = new MulNode(context);
+                    break;
+                case "/":
+                    operators = new DivNode(context);
+                    break;
+                case "+":
+                    operators = new AddNode(context);
+                    break;
+                case "-":
+                    operators = new SubNode(context);
+                    break;
+                default:
+                    throw new NotSupportedException();
+            }
+
+            operators.LeftOperand = Visit(context.expression(0)) as ExpressionNode;      // LEFT EXPRESSION
+            operators.RightOperand = Visit(context.expression(1)) as ExpressionNode;     //RIGHT EXPRESSION
+
+            return operators;
         }
 
         public override ASTNode VisitAssignment([NotNull] CoolParser.AssignmentContext context)
