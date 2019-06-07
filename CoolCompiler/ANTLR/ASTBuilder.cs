@@ -270,7 +270,7 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitParentheses([NotNull] CoolParser.ParenthesesContext context)
         {
-            return base.VisitParentheses(context);
+            return Visit(context.expression());
         }
 
         public override ASTNode VisitProgram([NotNull] CoolParser.ProgramContext context)
