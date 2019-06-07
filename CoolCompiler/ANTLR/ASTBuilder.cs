@@ -189,12 +189,18 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitFormal([NotNull] CoolParser.FormalContext context)
         {
-            return base.VisitFormal(context);
+            return new FormalNode(context)
+            {
+                Id = new IdentifierNode(context, context.ID().GetText()),
+                Type = new TypeNode(context.TYPE().Symbol.Line, context.TYPE().Symbol.Column, context.TYPE().GetText())
+            };
         }
 
         public override ASTNode VisitId([NotNull] CoolParser.IdContext context)
         {
-            return base.VisitId(context);
+            if (context.ID().GetText() == "self")
+                return new SelfNode(context);
+            return new IdentifierNode(context, context.ID().GetText());
         }
 
         public override ASTNode VisitIf([NotNull] CoolParser.IfContext context)
