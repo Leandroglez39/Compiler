@@ -238,7 +238,18 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitMethod([NotNull] CoolParser.MethodContext context)
         {
-            return base.VisitMethod(context);
+            MethodNode node = new MethodNode(context);
+
+            IdNode idMethod = new IdNode(context, context.ID().GetText());
+            node.Id = idMethod;
+
+            node.Arguments = (from x in context.formal() select Visit(x) as FormalNode).ToList();
+
+            var typeReturn = new TypeNode(context.TYPE().Symbol.Line, context.TYPE().Symbol.Column, context.TYPE().GetText());
+            node.TypeReturn = typeReturn;
+
+            node.Body = Visit(context.expression()) as ExpressionNode;
+            return node;
         }
 
         public override ASTNode VisitNegative([NotNull] CoolParser.NegativeContext context)
