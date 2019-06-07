@@ -275,7 +275,10 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitProgram([NotNull] CoolParser.ProgramContext context)
         {
-            return base.VisitProgram(context);
+            return new ProgramNode(context)
+            {
+                Classes = context.classDefine().Select(x => Visit(x) as ClassNode).ToList()
+            };
         }
 
         public override ASTNode VisitProperty([NotNull] CoolParser.PropertyContext context)

@@ -5,7 +5,7 @@ using CoolCompiler.SemanticCheck;
 
 namespace CoolCompiler.AST
 {
-    public abstract class AttributeNode :FeatureNode 
+    public class AttributeNode :FeatureNode 
     {
         public FormalNode Formal { get; set; }
         public ExpressionNode AssignExp { get; set; }
