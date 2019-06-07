@@ -90,7 +90,17 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitCase([NotNull] CoolParser.CaseContext context)
         {
-            return base.VisitCase(context);
+            CaseNode node = new CaseNode(context)
+            {
+                ExpressionCase = Visit(context.expression(0)) as ExpressionNode
+            };
+
+            var formals = context.formal().Select(x => Visit(x)).ToList();
+            var expressions = context.expression().Skip(1).Select(x => Visit(x)).ToList();
+            for (int i = 0; i < formals.Count; ++i)
+                node.Branches.Add((formals[i] as FormalNode, expressions[i] as ExpressionNode));
+
+            return node;
         }
 
         public override ASTNode VisitChildren(IRuleNode node)
