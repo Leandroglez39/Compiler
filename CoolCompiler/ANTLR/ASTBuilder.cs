@@ -215,7 +215,7 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitInt([NotNull] CoolParser.IntContext context)
         {
-            return base.VisitInt(context);
+            return new IntNode(context, context.INT().GetText());
         }
 
         public override ASTNode VisitIsvoid([NotNull] CoolParser.IsvoidContext context)
