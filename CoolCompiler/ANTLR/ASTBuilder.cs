@@ -254,7 +254,10 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitNegative([NotNull] CoolParser.NegativeContext context)
         {
-            return base.VisitNegative(context);
+            return new NegNode(context)
+            {
+                Operand = Visit(context.expression()) as ExpressionNode
+            };
         }
 
         public override ASTNode VisitNew([NotNull] CoolParser.NewContext context)
