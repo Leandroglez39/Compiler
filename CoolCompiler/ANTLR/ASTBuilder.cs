@@ -175,11 +175,13 @@ namespace CoolCompiler.ANTLR
             };
         }
 
+
+        //Terminar en caso de ser Necesario
         public override ASTNode VisitErrorNode(IErrorNode node)
         {
             return base.VisitErrorNode(node);
         }
-
+        //Mirar mas adelante
         public override ASTNode VisitFeature([NotNull] CoolParser.FeatureContext context)
         {
             return base.VisitFeature(context);
