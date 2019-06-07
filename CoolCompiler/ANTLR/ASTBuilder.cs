@@ -77,7 +77,7 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitBoolean([NotNull] CoolParser.BooleanContext context)
         {
-            return base.VisitBoolean(context);
+            return new BoolNode(context, context.value.Text);
         }
 
         public override ASTNode VisitBoolNot([NotNull] CoolParser.BoolNotContext context)
