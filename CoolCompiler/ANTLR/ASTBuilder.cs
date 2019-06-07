@@ -316,7 +316,11 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitWhile([NotNull] CoolParser.WhileContext context)
         {
-            return base.VisitWhile(context);
+            return new WhileNode(context)
+            {
+                Condition = Visit(context.expression(0)) as ExpressionNode,     // CONDITION
+                Body = Visit(context.expression(1)) as ExpressionNode           // BODY
+            };
         }
 
         protected override ASTNode AggregateResult(ASTNode aggregate, ASTNode nextResult)
