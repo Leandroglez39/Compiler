@@ -150,7 +150,20 @@ namespace CoolCompiler.ANTLR
 
         public override ASTNode VisitDispatchExplicit([NotNull] CoolParser.DispatchExplicitContext context)
         {
-            return base.VisitDispatchExplicit(context);
+            DispatchExplicitNode node = new DispatchExplicitNode(context)
+            {
+                Expression = Visit(context.expression(0)) as ExpressionNode
+            };
+
+            var typeSuperClass = context.TYPE() == null ? new TypeNode(node.Expression.Line, node.Expression.Column, node.Expression.StaticType.Text) :
+                new TypeNode(context.TYPE().Symbol.Line, context.TYPE().Symbol.Column, context.TYPE().GetText());
+            node.IdType = typeSuperClass;
+
+            IdNode idNode = new IdNode(context.ID().Symbol.Line, context.ID().Symbol.Column, context.ID().GetText());
+            node.IdMethod = idNode;
+
+            node.Arguments = (from x in context.expression().Skip(1) select Visit(x) as ExpressionNode).ToList();
+            return node;
         }
 
         public override ASTNode VisitDispatchImplicit([NotNull] CoolParser.DispatchImplicitContext context)
