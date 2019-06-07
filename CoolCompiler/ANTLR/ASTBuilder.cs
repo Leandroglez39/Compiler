@@ -323,6 +323,7 @@ namespace CoolCompiler.ANTLR
             };
         }
 
+        /* Mirar para q son estos nodos
         protected override ASTNode AggregateResult(ASTNode aggregate, ASTNode nextResult)
         {
             return base.AggregateResult(aggregate, nextResult);
@@ -331,6 +332,6 @@ namespace CoolCompiler.ANTLR
         protected override bool ShouldVisitNextChild(IRuleNode node, ASTNode currentResult)
         {
             return base.ShouldVisitNextChild(node, currentResult);
-        }
+        }*/
     }
 }
