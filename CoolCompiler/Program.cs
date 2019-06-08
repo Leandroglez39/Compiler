@@ -29,7 +29,25 @@ namespace CoolCompiler
 
             var parser = new CoolParser(tokens);
 
-            Console.WriteLine( parser.program().ToStringTree(parser) );
+            var tree = parser.program();
+
+            ASTBuilder astBuilder = new ASTBuilder();
+            ASTNode ast = astBuilder.Visit(tree);
+            Console.WriteLine( );
+
+
+            var a = new Dictionary<int,int>();
+            a.Add(1,2);
+            a.Add(3, 4);
+            a.Add(5, 6);
+
+            foreach (var x in ast.Attributes)
+            {
+                Console.WriteLine( "{"+ 
+                x.Key.ToString() + ":" + x.Value.ToString() + "}" );
+            }
+
+            
             Console.WriteLine(  );
 
         }

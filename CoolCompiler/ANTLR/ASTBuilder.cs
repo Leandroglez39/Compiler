@@ -25,6 +25,7 @@ namespace CoolCompiler.ANTLR
             return base.ToString();
         }
 
+
         public override ASTNode Visit(IParseTree tree)
         {
             return base.Visit(tree);
