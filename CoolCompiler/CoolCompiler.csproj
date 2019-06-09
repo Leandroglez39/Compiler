@@ -93,6 +93,8 @@
     <Compile Include="AST\Expression\Feature\FeatureNode.cs" />
     <Compile Include="AST\Expression\Feature\MethodNode.cs" />
     <Compile Include="AST\ProgramNode.cs" />
+    <Compile Include="CodeGenerations\3AC\CodigoTresDirLine.cs" />
+    <Compile Include="CodeGenerations\ICodeVisitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SemanticCheck\Info\TypeInfo.cs" />
@@ -105,8 +107,6 @@
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CodeGenerations\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

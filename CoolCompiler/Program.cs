@@ -36,7 +36,7 @@ namespace CoolCompiler
             Console.WriteLine( );
 
 
-            var a = new Dictionary<int,int>();
+           /* var a = new Dictionary<int,int>();
             a.Add(1,2);
             a.Add(3, 4);
             a.Add(5, 6);
@@ -46,9 +46,9 @@ namespace CoolCompiler
                 Console.WriteLine( "{"+ 
                 x.Key.ToString() + ":" + x.Value.ToString() + "}" );
             }
-
+            */
             
-            Console.WriteLine(  );
+            Console.WriteLine( tree.ToStringTree(parser) );
 
         }
     }

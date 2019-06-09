@@ -1,9 +1,10 @@
-﻿using Antlr4.Runtime;
+﻿using CoolCompiler.CodeGenerations;
 
 namespace CoolCompiler.CodeGenerations
 {
     public class ICodeVisitor
     {
+        /*
         void Visit(AllocateLine line);
 
         void Visit(AssignmentVariableToMemoryLine line);
@@ -49,6 +50,6 @@ namespace CoolCompiler.CodeGenerations
         void Visit(PushParamLine line);
 
         void Visit(ReturnLine line);
-        void Visit(InheritLine line);
+        void Visit(InheritLine line);*/
     }
 }
