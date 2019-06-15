@@ -6,25 +6,25 @@ namespace CoolCompiler.CodeGenerations
     {
         /*
         void Visit(AllocateLine line);
+        */
+        void Visit(AssignmentVariableToMemory line);
 
-        void Visit(AssignmentVariableToMemoryLine line);
+        void Visit(AssignmentVariableToVariable line);
 
-        void Visit(AssignmentVariableToVariableLine line);
+        void Visit(AssignmentConstantToMemory line);
 
-        void Visit(AssignmentConstantToMemoryLine line);
+        void Visit(AssignmentMemoryToVariable line);
 
-        void Visit(AssignmentMemoryToVariableLine line);
+        void Visit(AssignmentConstantToVariable line);
 
-        void Visit(AssignmentConstantToVariableLine line);
+        void Visit(AssignmentStringToVariable line);
 
-        void Visit(AssignmentStringToVariableLine line);
+        void Visit(AssignmentStringToMemory line);
 
-        void Visit(AssignmentStringToMemoryLine line);
+        void Visit(AssignmentLabelToVariable line);
 
-        void Visit(AssignmentLabelToVariableLine line);
-
-        void Visit(AssignmentLabelToMemoryLine line);
-        
+        void Visit(AssignmentLabelToMemory line);
+        /*
         void Visit(CallLabelLine line);
 
         void Visit(CallAddressLine line);
@@ -36,9 +36,9 @@ namespace CoolCompiler.CodeGenerations
         void Visit(ConditionalJumpLine line);
         */
         void Visit(LabelLine line);
+        
+        void Visit(AssignmentNullToVariable line);
         /*
-        void Visit(AssignmentNullToVariableLine line);
-
         void Visit(BinaryOperationLine line);
 
         void Visit(UnaryOperationLine line);
