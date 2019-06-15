@@ -47,8 +47,8 @@ namespace CoolCompiler.CodeGenerations
         void Visit(Param line);
 
         void Visit(PopParam line);
-        /*
-        void Visit(PushParamLine line);
+        
+        void Visit(PushParam line);
 
         void Visit(ReturnLine line);
         void Visit(InheritLine line);*/
