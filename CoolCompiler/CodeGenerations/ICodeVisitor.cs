@@ -1,5 +1,6 @@
 ﻿using CoolCompiler.CodeGenerations;
 
+
 namespace CoolCompiler.CodeGenerations
 {
     public interface ICodeVisitor
@@ -30,11 +31,11 @@ namespace CoolCompiler.CodeGenerations
         void Visit(CallAddressLine line);
 
         void Visit(CommentLine line);
-
-        void Visit(GotoJumpLine line);
-
-        void Visit(ConditionalJumpLine line);
         */
+        void Visit(GotoJump line);
+
+        void Visit(ConditionalJump line);
+        
         void Visit(LabelLine line);
         
         void Visit(AssignmentNullToVariable line);
