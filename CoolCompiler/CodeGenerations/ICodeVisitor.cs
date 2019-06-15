@@ -2,7 +2,7 @@
 
 namespace CoolCompiler.CodeGenerations
 {
-    public class ICodeVisitor
+    public interface ICodeVisitor
     {
         /*
         void Visit(AllocateLine line);
@@ -24,7 +24,7 @@ namespace CoolCompiler.CodeGenerations
         void Visit(AssignmentLabelToVariableLine line);
 
         void Visit(AssignmentLabelToMemoryLine line);
-
+        
         void Visit(CallLabelLine line);
 
         void Visit(CallAddressLine line);
@@ -34,9 +34,9 @@ namespace CoolCompiler.CodeGenerations
         void Visit(GotoJumpLine line);
 
         void Visit(ConditionalJumpLine line);
-
+        */
         void Visit(LabelLine line);
-
+        /*
         void Visit(AssignmentNullToVariableLine line);
 
         void Visit(BinaryOperationLine line);
