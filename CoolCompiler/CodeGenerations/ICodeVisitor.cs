@@ -43,11 +43,11 @@ namespace CoolCompiler.CodeGenerations
         void Visit(BinaryOperationLine line);
 
         void Visit(UnaryOperationLine line);
+        */
+        void Visit(Param line);
 
-        void Visit(ParamLine line);
-
-        void Visit(PopParamLine line);
-
+        void Visit(PopParam line);
+        /*
         void Visit(PushParamLine line);
 
         void Visit(ReturnLine line);
