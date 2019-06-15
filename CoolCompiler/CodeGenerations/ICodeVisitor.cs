@@ -25,11 +25,11 @@ namespace CoolCompiler.CodeGenerations
         void Visit(AssignmentLabelToVariable line);
 
         void Visit(AssignmentLabelToMemory line);
+        
+        void Visit(CallLabel line);
+
+        void Visit(CallAddress line);
         /*
-        void Visit(CallLabelLine line);
-
-        void Visit(CallAddressLine line);
-
         void Visit(CommentLine line);
         */
         void Visit(GotoJump line);
