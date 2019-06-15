@@ -5,9 +5,9 @@ namespace CoolCompiler.CodeGenerations
 {
     public interface ICodeVisitor
     {
-        /*
-        void Visit(AllocateLine line);
-        */
+        
+        void Visit(Allocate line);
+        
         void Visit(AssignmentVariableToMemory line);
 
         void Visit(AssignmentVariableToVariable line);
