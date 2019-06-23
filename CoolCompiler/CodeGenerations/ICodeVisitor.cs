@@ -29,9 +29,9 @@ namespace CoolCompiler.CodeGenerations
         void Visit(CallLabel line);
 
         void Visit(CallAddress line);
-        /*
+        
         void Visit(CommentLine line);
-        */
+        
         void Visit(GotoJump line);
 
         void Visit(ConditionalJump line);
