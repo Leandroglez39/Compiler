@@ -40,9 +40,9 @@ namespace CoolCompiler.CodeGenerations
         
         void Visit(AssignmentNullToVariable line);
         
-        void Visit(BinaryOperationLine line);
+        void Visit(BinaryOperation line);
 
-        void Visit(UnaryOperationLine line);
+        void Visit(UnaryOperation line);
         
         void Visit(Param line);
 
