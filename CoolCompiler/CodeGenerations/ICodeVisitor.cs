@@ -51,6 +51,6 @@ namespace CoolCompiler.CodeGenerations
         void Visit(PushParam line);
 
         void Visit(Return line);
-        void Visit(InheritLine line);*/
+        void Visit(Inherit line);
     }
 }
