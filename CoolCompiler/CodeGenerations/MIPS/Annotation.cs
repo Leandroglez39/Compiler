@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using CoolCompiler.SemanticCheck;
 using CoolCompiler.CodeGenerations;
 
-namespace Cool.CodeGeneration
+namespace CoolCompiler.CodeGenerations
 {
     public class Annotation : ICodeVisitor
     {
