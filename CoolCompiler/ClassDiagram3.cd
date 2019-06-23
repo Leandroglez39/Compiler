@@ -1,2 +1,158 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CoolCompiler.CodeGenerations.Allocate" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAgAAEAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Allocate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.Assignment&lt;T&gt;" Collapsed="true">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Assignmen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.AssignmentVariableToMemory" Collapsed="true">
+    <Position X="14" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Assignmen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.AssignmentVariableToVariable" Collapsed="true">
+    <Position X="18.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Assignmen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.AssignmentConstantToMemory" Collapsed="true">
+    <Position X="23" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Assignmen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.AssignmentMemoryToVariable" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Assignmen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.AssignmentConstantToVariable" Collapsed="true">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Assignmen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.AssignmentStringToVariable" Collapsed="true">
+    <Position X="16.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Assignmen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.AssignmentStringToMemory" Collapsed="true">
+    <Position X="20.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Assignmen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.AssignmentLabelToVariable" Collapsed="true">
+    <Position X="25.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Assignmen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.AssignmentLabelToMemory" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Assignmen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.AssignmentNullToVariable" Collapsed="true">
+    <Position X="27.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Assignmen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.CallLabel" Collapsed="true">
+    <Position X="34.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAEAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Call.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.CallAddress" Collapsed="true">
+    <Position X="36.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAEAAAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Call.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.ThreeCode" Collapsed="true">
+    <Position X="20.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\CodigoTresDirLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.GotoJump" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAEAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\ConditionalJump.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.ConditionalJump" Collapsed="true">
+    <Position X="29.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAEAAgAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\ConditionalJump.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.Label" Collapsed="true">
+    <Position X="43.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Label.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.LabelLine" Collapsed="true">
+    <Position X="38.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAEAAgAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Label.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.Param" Collapsed="true">
+    <Position X="41" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\Param.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.PopParam" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAEAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\PopParam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoolCompiler.CodeGenerations.PushParam" Collapsed="true">
+    <Position X="32" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>CodeGenerations\3AC\PushParam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
