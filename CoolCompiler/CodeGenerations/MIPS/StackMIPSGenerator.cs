@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Cool.CodeGeneration.IntermediateCode.ThreeAddressCode;
+
 using System.IO;
 
-namespace Cool.CodeGeneration.MIPSCode
+namespace CoolCompiler.CodeGenerations
 {
     class StackMIPSGenerator : IMIPSCodeGenerator, ICodeVisitor
     {
@@ -17,7 +17,7 @@ namespace Cool.CodeGeneration.MIPSCode
         int param_count;
         Annotation annotation;
 
-        public string GenerateCode(List<CodeLine> lines)
+        public string GenerateCode(List<ThreeCode> lines)
         {
             Code = new List<string>();
             Data = new List<string>();
@@ -296,7 +296,7 @@ namespace Cool.CodeGeneration.MIPSCode
             Code.Add($"li $t9, 0");
         }
 
-        public void Visit(AllocateLine line)
+        public void Visit(Allocate line)
         {
             Code.Add($"# Begin Allocate");
             Code.Add($"li $v0, 9");
@@ -306,7 +306,7 @@ namespace Cool.CodeGeneration.MIPSCode
             Code.Add($"# End Allocate");
         }
 
-        public void Visit(GotoJumpLine line)
+        public void Visit(GotoJump line)
         {
             Code.Add($"j {line.Label.Label}");
         }
@@ -316,46 +316,46 @@ namespace Cool.CodeGeneration.MIPSCode
             return;
         }
 
-        public void Visit(AssignmentVariableToMemoryLine line)
+        public void Visit(AssignmentVariableToMemory line)
         {
             Code.Add($"lw $a0, {-line.Right*4}($sp)");
             Code.Add($"lw $a1, {-line.Left*4}($sp)");
             Code.Add($"sw $a0, {line.Offset*4}($a1)");
         }
 
-        public void Visit(AssignmentVariableToVariableLine line)
+        public void Visit(AssignmentVariableToVariable line)
         {
             Code.Add($"lw $a0, {-line.Right*4}($sp)");
             Code.Add($"sw $a0, {-line.Left*4}($sp)");
         }
 
-        public void Visit(AssignmentConstantToMemoryLine line)
+        public void Visit(AssignmentConstantToMemory line)
         {
             Code.Add($"lw $a0, {-line.Left * 4}($sp)");
             Code.Add($"li $a1, {line.Right}");
             Code.Add($"sw $a1, {line.Offset * 4}($a0)");
         }
 
-        public void Visit(AssignmentMemoryToVariableLine line)
+        public void Visit(AssignmentMemoryToVariable line)
         {
             Code.Add($"lw $a0, {-line.Right * 4}($sp)");
             Code.Add($"lw $a1, {line.Offset * 4}($a0)");
             Code.Add($"sw $a1, {-line.Left * 4}($sp)");
         }
 
-        public void Visit(AssignmentConstantToVariableLine line)
+        public void Visit(AssignmentConstantToVariable line)
         {
             Code.Add($"li $a0, {line.Right}");
             Code.Add($"sw $a0, {-line.Left * 4}($sp)");
         }
 
-        public void Visit(AssignmentStringToVariableLine line)
+        public void Visit(AssignmentStringToVariable line)
         {
             Code.Add($"la $a0, str{annotation.StringsCounter[line.Right]}");
             Code.Add($"sw $a0, {-line.Left * 4}($sp)");
         }
 
-        public void Visit(AssignmentStringToMemoryLine line)
+        public void Visit(AssignmentStringToMemory line)
         {
             Code.Add($"la $a0, str{annotation.StringsCounter[line.Right]}");
             Code.Add($"lw $a1, {-line.Left * 4}($sp)");
@@ -363,53 +363,53 @@ namespace Cool.CodeGeneration.MIPSCode
         }
 
 
-        public void Visit(AssignmentLabelToVariableLine line)
+        public void Visit(AssignmentLabelToVariable line)
         {
             Code.Add($"la $a0, {line.Right.Label}");
             Code.Add($"sw $a0, {-line.Left * 4}($sp)");
         }
 
-        public void Visit(AssignmentLabelToMemoryLine line)
+        public void Visit(AssignmentLabelToMemory line)
         {
             Code.Add($"la $a0, {line.Right.Label}");
             Code.Add($"lw $a1, {-line.Left * 4}($sp)");
             Code.Add($"sw $a0, {line.Offset * 4}($a1)");
         }
-        public void Visit(AssignmentNullToVariableLine line)
+        public void Visit(AssignmentNullToVariable line)
         {
             Code.Add($"sw $zero, {-line.Variable * 4}($sp)");
         }
 
-        public void Visit(ReturnLine line)
+        public void Visit(Return line)
         {
             Code.Add($"lw $v0, {-line.Variable * 4}($sp)");
             Code.Add($"jr $ra");
         }
 
-        public void Visit(ParamLine line)
+        public void Visit(Param line)
         {
             return;
         }
 
-        public void Visit(PopParamLine line)
+        public void Visit(PopParam line)
         {
             param_count = 0;
         }
 
-        public void Visit(ConditionalJumpLine line)
+        public void Visit(ConditionalJump line)
         {
             Code.Add($"lw $a0, {-line.ConditionalVar * 4}($sp)");
             Code.Add($"beqz $a0, {line.Label.Label}");
         }
 
-        public void Visit(PushParamLine line)
+        public void Visit(PushParam line)
         {
             ++param_count;
             Code.Add($"lw $a0, {-line.Variable * 4}($sp)");
             Code.Add($"sw $a0, {-(size + param_count) * 4}($sp)");
         }
 
-        public void Visit(CallLabelLine line)
+        public void Visit(CallLabel line)
         {
             Code.Add($"sw $ra, {-size*4}($sp)");
             Code.Add($"addiu $sp, $sp, {-(size + 1)*4}");
@@ -421,7 +421,7 @@ namespace Cool.CodeGeneration.MIPSCode
                 Code.Add($"sw $v0, {-line.Result*4}($sp)");
         }
 
-        public void Visit(CallAddressLine line)
+        public void Visit(CallAddress line)
         {
             Code.Add($"sw $ra, {-size * 4}($sp)");
             Code.Add($"lw $a0, {-line.Address * 4}($sp)");
@@ -435,7 +435,7 @@ namespace Cool.CodeGeneration.MIPSCode
         }
         
 
-        public void Visit(BinaryOperationLine line)
+        public void Visit(BinaryOperation line)
         {
             Code.Add($"lw $a0, {-line.LeftOperandVariable * 4}($sp)");
             Code.Add($"lw $a1, {-line.RightOperandVariable * 4}($sp)");
@@ -488,7 +488,7 @@ namespace Cool.CodeGeneration.MIPSCode
             Code.Add($"sw $a0, {-line.AssignVariable * 4}($sp)");
         }
 
-        public void Visit(UnaryOperationLine line)
+        public void Visit(UnaryOperation line)
         {
             Code.Add($"lw $a0, {-line.OperandVariable * 4}($sp)");
 
@@ -512,10 +512,10 @@ namespace Cool.CodeGeneration.MIPSCode
             Code.Add($"sw $a0, {-line.AssignVariable * 4}($sp)");
         }
 
-        public void Visit(InheritLine line)
+        public void Visit(Inherit line)
         {
 
-            //throw new NotImplementedException();
+            
         }
         
     }
