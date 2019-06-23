@@ -39,11 +39,11 @@ namespace CoolCompiler.CodeGenerations
         void Visit(LabelLine line);
         
         void Visit(AssignmentNullToVariable line);
-        /*
+        
         void Visit(BinaryOperationLine line);
 
         void Visit(UnaryOperationLine line);
-        */
+        
         void Visit(Param line);
 
         void Visit(PopParam line);
