@@ -1,5 +1,5 @@
 ﻿using CoolCompiler.SemanticCheck;
-using System.Collections.Generic;
+
 using Antlr4.Runtime;
 using CoolCompiler.SemanticCheck.Info;
 
